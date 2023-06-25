@@ -1,0 +1,4 @@
+opencv-contrib-python
+confluent-kafka
+Flask
+face-recognition
