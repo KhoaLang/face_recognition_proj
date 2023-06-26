@@ -4,6 +4,7 @@ import os
 import face_recognition
 import pickle
 import socketio
+import datetime
 
 sio = socketio.Client()
 
@@ -96,8 +97,12 @@ def disconnect():
 
 
 if __name__ == "__main__":
+    start_time = datetime.datetime.now()
     train = Train()
     train.train_main()
+    end_time = datetime.datetime.now()
+
+    print(f"Completed Training between {start_time} to {end_time} ")
 
     sio.connect("http://127.0.0.1:5000")
     sio.emit("join", "room-1")
